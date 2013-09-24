@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Index:</strong>
+  <%= @book.index %>
+</p>
+
+<p>
+  <strong>Tytul:</strong>
+  <%= @book.tytul %>
+</p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @book.autor %>
+</p>
+
+<p>
+  <strong>Wydawnictwo:</strong>
+  <%= @book.wydawnictwo %>
+</p>
+
+<p>
+  <strong>Rok wydania:</strong>
+  <%= @book.Rok_wydania %>
+</p>
+
+<p>
+  <strong>Ilosc egzemplarzy:</strong>
+  <%= @book.Ilosc_egzemplarzy %>
+</p>
+
+<p>
+  <strong>Cena zakupu:</strong>
+  <%= @book.Cena_zakupu %>
+</p>
+
+<p>
+  <strong>Cena sprzedazy:</strong>
+  <%= @book.Cena_sprzedazy %>
+</p>
+
+<p>
+  <strong>Nr rachunku:</strong>
+  <%= @book.Nr_rachunku %>
+</p>
+
+<p>
+  <strong>Uwagi:</strong>
+  <%= @book.Uwagi %>
+</p>
+
+<p>
+  <strong>Isbn:</strong>
+  <%= @book.ISBN %>
+</p>
+
+<p>
+  <strong>Stawka vat:</strong>
+  <%= @book.Stawka_VAT %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

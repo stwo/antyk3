@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  index: 1
+  tytul: MyString
+  autor: MyString
+  wydawnictwo: MyString
+  Rok_wydania: MyString
+  Ilosc_egzemplarzy: 1
+  Cena_zakupu: 9.99
+  Cena_sprzedazy: 9.99
+  Nr_rachunku: MyString
+  Uwagi: MyString
+  ISBN: MyString
+  Stawka_VAT: 9.99
+
+two:
+  index: 1
+  tytul: MyString
+  autor: MyString
+  wydawnictwo: MyString
+  Rok_wydania: MyString
+  Ilosc_egzemplarzy: 1
+  Cena_zakupu: 9.99
+  Cena_sprzedazy: 9.99
+  Nr_rachunku: MyString
+  Uwagi: MyString
+  ISBN: MyString
+  Stawka_VAT: 9.99

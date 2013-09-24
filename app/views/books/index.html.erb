@@ -1,0 +1,49 @@
+<h1>Listing books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Tytul</th>
+      <th>Autor</th>
+      <th>Wydawnictwo</th>
+      <th>Rok wydania</th>
+      <th>Ilosc egzemplarzy</th>
+      <th>Cena zakupu</th>
+      <th>Cena sprzedazy</th>
+      <th>Nr rachunku</th>
+      <th>Uwagi</th>
+      <th>Isbn</th>
+      <th>Stawka vat</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.index %></td>
+        <td><%= book.tytul %></td>
+        <td><%= book.autor %></td>
+        <td><%= book.wydawnictwo %></td>
+        <td><%= book.Rok_wydania %></td>
+        <td><%= book.Ilosc_egzemplarzy %></td>
+        <td><%= book.Cena_zakupu %></td>
+        <td><%= book.Cena_sprzedazy %></td>
+        <td><%= book.Nr_rachunku %></td>
+        <td><%= book.Uwagi %></td>
+        <td><%= book.ISBN %></td>
+        <td><%= book.Stawka_VAT %></td>
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>

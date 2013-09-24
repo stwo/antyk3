@@ -1,0 +1,600 @@
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923192615)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923192615)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923192615)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923192615)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" integer, "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" text, "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130923192615"]]
+  [1m[36m (18.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/book" for 127.0.0.1 at 2013-09-23 22:40:28 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/book"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.7ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (27.6ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (110.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 22:40:38 +0200
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 9443ms (Views: 9278.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-23 22:40:48 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-23 22:40:48 +0200
+
+
+Started GET "/assets/books.css?body=1" for 127.0.0.1 at 2013-09-23 22:40:48 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-23 22:40:48 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-23 22:40:48 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-09-23 22:40:48 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-23 22:40:48 +0200
+
+
+Started GET "/assets/books.js?body=1" for 127.0.0.1 at 2013-09-23 22:40:48 +0200
+
+
+Started GET "/books/new" for 127.0.0.1 at 2013-09-23 22:40:51 +0200
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (225.0ms)
+  Rendered books/new.html.erb within layouts/application (228.5ms)
+Completed 200 OK in 279ms (Views: 276.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 22:55:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.0) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.0) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__4244611126340694654__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.1ms)
+
+
+Started GET "/book" for 127.0.0.1 at 2013-09-23 22:55:39 +0200
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.0) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.0) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__4244611126340694654__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 22:55:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.0) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.0) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__4244611126340694654__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923205434)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "books" already exists: CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923205434)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "books" already exists: CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923205434)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "books" already exists: CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.1ms)[0m  rollback transaction
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 23:13:30 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.0) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.0) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__940612128093578877__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/stanislawworonowicz/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923205434)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "books" already exists: CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923205434)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (2.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923205434)
+  [1m[35m (1.7ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytuł" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilość_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedaży" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130923205434"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 23:24:24 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 465ms (Views: 359.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/books.css?body=1" for 127.0.0.1 at 2013-09-23 23:24:25 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-23 23:24:25 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-23 23:24:26 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-23 23:24:26 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-23 23:24:26 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-09-23 23:24:26 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-23 23:24:26 +0200
+
+
+Started GET "/assets/books.js?body=1" for 127.0.0.1 at 2013-09-23 23:24:26 +0200
+
+
+Started GET "/books/new" for 127.0.0.1 at 2013-09-23 23:24:28 +0200
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (263.3ms)
+  Rendered books/new.html.erb within layouts/application (284.2ms)
+Completed 200 OK in 295ms (Views: 292.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2013-09-23 23:25:58 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j5naKxjnMrdTuJkeXgcUD5CU9SLtn7y6dmGcgxON2jg=", "book"=>{"index"=>"342345747474675675", "tytuł"=>"pierwsza miłość", "autor"=>"Janeczek Kowalski", "wydawnictwo"=>"ZAIKS", "Rok_wydania"=>"2010", "Ilość_egzemplarzy"=>"1", "Cena_zakupu"=>"20", "Cena_sprzedaży"=>"30", "Nr_rachunku"=>"", "Uwagi"=>"0sofsf sofj s90u 4w-jfsdiofzsd;ffa90*&(_ &^*&#)^ )*", "ISBN"=>"203-34-23-2435", "Stawka_VAT"=>"0"}, "commit"=>"Create Book"}
+Completed 500 Internal Server Error in 3ms
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `tytuł'):
+  app/controllers/books_controller.rb:27:in `create'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (43.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2013-09-23 23:26:07 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j5naKxjnMrdTuJkeXgcUD5CU9SLtn7y6dmGcgxON2jg=", "book"=>{"index"=>"342345747474675675", "tytuł"=>"pierwsza miłość", "autor"=>"Janeczek Kowalski", "wydawnictwo"=>"ZAIKS", "Rok_wydania"=>"2010", "Ilość_egzemplarzy"=>"1", "Cena_zakupu"=>"20", "Cena_sprzedaży"=>"30", "Nr_rachunku"=>"", "Uwagi"=>"0sofsf sofj s90u 4w-jfsdiofzsd;ffa90*&(_ &^*&#)^ )*", "ISBN"=>"203-34-23-2435", "Stawka_VAT"=>"0"}, "commit"=>"Create Book"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `tytuł'):
+  app/controllers/books_controller.rb:27:in `create'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 23:26:10 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (3.6ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 32ms (Views: 19.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2013-09-23 23:26:12 +0200
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (12.0ms)
+  Rendered books/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2013-09-23 23:27:38 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j5naKxjnMrdTuJkeXgcUD5CU9SLtn7y6dmGcgxON2jg=", "book"=>{"index"=>"1234567", "tytuł"=>"Dalajlama na wakacjach Śśąć", "autor"=>"Janek Łanek", "wydawnictwo"=>"ZAIKS", "Rok_wydania"=>"2010", "Ilość_egzemplarzy"=>"1", "Cena_zakupu"=>"20", "Cena_sprzedaży"=>"30", "Nr_rachunku"=>"", "Uwagi"=>"Ta książka ma twardą okładkę i nie jest wcale znisznoczn ilość stron 304", "ISBN"=>"203-34-23-2435", "Stawka_VAT"=>"0"}, "commit"=>"Create Book"}
+Completed 500 Internal Server Error in 3ms
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `tytuł'):
+  app/controllers/books_controller.rb:27:in `create'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (79.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 23:29:36 +0200
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2013-09-23 23:29:38 +0200
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (11.5ms)
+  Rendered books/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2013-09-23 23:30:21 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j5naKxjnMrdTuJkeXgcUD5CU9SLtn7y6dmGcgxON2jg=", "book"=>{"index"=>"1", "tytuł"=>"wielka draka", "autor"=>"kornel kaczka", "wydawnictwo"=>"ZAIKS", "Rok_wydania"=>"2010", "Ilość_egzemplarzy"=>"1", "Cena_zakupu"=>"20", "Cena_sprzedaży"=>"30", "Nr_rachunku"=>"", "Uwagi"=>"bez polskich znakow pisze", "ISBN"=>"203-34-23-2435", "Stawka_VAT"=>"0"}, "commit"=>"Create Book"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `tytuł'):
+  app/controllers/books_controller.rb:27:in `create'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.0ms)
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923205434)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytul" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilosc_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedazy" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130923205434"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started POST "/books" for 127.0.0.1 at 2013-09-23 23:32:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j5naKxjnMrdTuJkeXgcUD5CU9SLtn7y6dmGcgxON2jg=", "book"=>{"index"=>"1", "tytuł"=>"wielka draka", "autor"=>"kornel kaczka", "wydawnictwo"=>"ZAIKS", "Rok_wydania"=>"2010", "Ilość_egzemplarzy"=>"1", "Cena_zakupu"=>"20", "Cena_sprzedaży"=>"30", "Nr_rachunku"=>"", "Uwagi"=>"bez polskich znakow pisze", "ISBN"=>"203-34-23-2435", "Stawka_VAT"=>"0"}, "commit"=>"Create Book"}
+Completed 500 Internal Server Error in 200ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: tytuł):
+  app/controllers/books_controller.rb:27:in `create'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.7ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (80.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 23:32:12 +0200
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2013-09-23 23:32:14 +0200
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (60.2ms)
+  Rendered books/new.html.erb within layouts/application (64.9ms)
+Completed 500 Internal Server Error in 69ms
+
+ActionView::Template::Error (undefined method `tytuł' for #<Book:0x00000103a289e8>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :tytuł %><br>
+    20:     <%= f.text_field :tytuł %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :autor %><br>
+  app/views/books/_form.html.erb:20:in `block in _app_views_books__form_html_erb___2991749728631743276_2178094740'
+  app/views/books/_form.html.erb:1:in `_app_views_books__form_html_erb___2991749728631743276_2178094740'
+  app/views/books/new.html.erb:3:in `_app_views_books_new_html_erb___400024179415486514_2177996080'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.4ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2013-09-23 23:32:15 +0200
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (8.1ms)
+  Rendered books/new.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (undefined method `tytuł' for #<Book:0x000001038b0d90>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :tytuł %><br>
+    20:     <%= f.text_field :tytuł %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :autor %><br>
+  app/views/books/_form.html.erb:20:in `block in _app_views_books__form_html_erb___2991749728631743276_2177237060'
+  app/views/books/_form.html.erb:1:in `_app_views_books__form_html_erb___2991749728631743276_2177237060'
+  app/views/books/new.html.erb:3:in `_app_views_books_new_html_erb___400024179415486514_2177226420'
+
+
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+  Rendered /Users/stanislawworonowicz/.rvm/gems/ruby-2.0.0-p247@railstutorial_rails_4_0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.2ms)
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20130923213447)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "index" integer, "tytul" varchar(255), "autor" varchar(255), "wydawnictwo" varchar(255), "Rok_wydania" varchar(255), "Ilosc_egzemplarzy" integer, "Cena_zakupu" decimal, "Cena_sprzedazy" decimal, "Nr_rachunku" varchar(255), "Uwagi" varchar(255), "ISBN" varchar(255), "Stawka_VAT" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130923213447"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 23:35:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 222ms (Views: 160.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-23 23:35:32 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-23 23:35:32 +0200
+
+
+Started GET "/assets/books.css?body=1" for 127.0.0.1 at 2013-09-23 23:35:32 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-23 23:35:32 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-23 23:35:32 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-09-23 23:35:32 +0200
+
+
+Started GET "/assets/books.js?body=1" for 127.0.0.1 at 2013-09-23 23:35:32 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-23 23:35:32 +0200
+
+
+Started GET "/books/new" for 127.0.0.1 at 2013-09-23 23:35:34 +0200
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (123.9ms)
+  Rendered books/new.html.erb within layouts/application (128.8ms)
+Completed 200 OK in 139ms (Views: 136.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j5naKxjnMrdTuJkeXgcUD5CU9SLtn7y6dmGcgxON2jg=", "book"=>{"index"=>"1", "tytul"=>"jaś fasola", "autor"=>"janek strąk", "wydawnictwo"=>"ZAIKS", "Rok_wydania"=>"2010", "Ilosc_egzemplarzy"=>"1", "Cena_zakupu"=>"20", "Cena_sprzedazy"=>"30", "Nr_rachunku"=>"", "Uwagi"=>"bez polskich znakow pisze", "ISBN"=>"203-34-23-2435", "Stawka_VAT"=>"0"}, "commit"=>"Create Book"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (70.9ms)[0m  INSERT INTO "books" ("Cena_sprzedazy", "Cena_zakupu", "ISBN", "Ilosc_egzemplarzy", "Nr_rachunku", "Rok_wydania", "Stawka_VAT", "Uwagi", "autor", "created_at", "index", "tytul", "updated_at", "wydawnictwo") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Cena_sprzedazy", #<BigDecimal:1017324c0,'0.3E2',9(18)>], ["Cena_zakupu", #<BigDecimal:101732510,'0.2E2',9(18)>], ["ISBN", "203-34-23-2435"], ["Ilosc_egzemplarzy", 1], ["Nr_rachunku", ""], ["Rok_wydania", "2010"], ["Stawka_VAT", #<BigDecimal:101732470,'0.0',9(18)>], ["Uwagi", "bez polskich znakow pisze"], ["autor", "janek strąk"], ["created_at", Mon, 23 Sep 2013 21:36:13 UTC +00:00], ["index", 1], ["tytul", "jaś fasola"], ["updated_at", Mon, 23 Sep 2013 21:36:13 UTC +00:00], ["wydawnictwo", "ZAIKS"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 85ms (ActiveRecord: 72.9ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 19ms (Views: 8.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+
+
+Started GET "/assets/books.css?body=1" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+
+
+Started GET "/assets/books.js?body=1" for 127.0.0.1 at 2013-09-23 23:36:13 +0200
+
+
+Started GET "/books" for 127.0.0.1 at 2013-09-23 23:36:35 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.3ms)

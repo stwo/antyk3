@@ -1,0 +1,65 @@
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :index %><br>
+    <%= f.number_field :index %>
+  </div>
+  <div class="field">
+    <%= f.label :tytul %><br>
+    <%= f.text_field :tytul %>
+  </div>
+  <div class="field">
+    <%= f.label :autor %><br>
+    <%= f.text_field :autor %>
+  </div>
+  <div class="field">
+    <%= f.label :wydawnictwo %><br>
+    <%= f.text_field :wydawnictwo %>
+  </div>
+  <div class="field">
+    <%= f.label :Rok_wydania %><br>
+    <%= f.text_field :Rok_wydania %>
+  </div>
+  <div class="field">
+    <%= f.label :Ilosc_egzemplarzy %><br>
+    <%= f.number_field :Ilosc_egzemplarzy %>
+  </div>
+  <div class="field">
+    <%= f.label :Cena_zakupu %><br>
+    <%= f.text_field :Cena_zakupu %>
+  </div>
+  <div class="field">
+    <%= f.label :Cena_sprzedazy %><br>
+    <%= f.text_field :Cena_sprzedazy %>
+  </div>
+  <div class="field">
+    <%= f.label :Nr_rachunku %><br>
+    <%= f.text_field :Nr_rachunku %>
+  </div>
+  <div class="field">
+    <%= f.label :Uwagi %><br>
+    <%= f.text_field :Uwagi %>
+  </div>
+  <div class="field">
+    <%= f.label :ISBN %><br>
+    <%= f.text_field :ISBN %>
+  </div>
+  <div class="field">
+    <%= f.label :Stawka_VAT %><br>
+    <%= f.text_field :Stawka_VAT %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
